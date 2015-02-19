@@ -1,0 +1,13 @@
+/*   
+Theme Name: WP Alchemy Holy Grail
+Description: A child theme of Twenty Fourteen that is meant to show repeatable, sortable, WYSIWYG (tinyMCE-enabled) text editors complete with media buttons. 
+Author: Kathy Darling
+Author URI: http://www.kathyisawesome.com/
+Template: twentyfourteen
+Version: 1.1  
+.
+WP Alchemy is © Dimas Begunoff http://www.farinspace.com/wpalchemy-metabox/
+*/
+
+/* Import Style */
+@import url('../twentyfourteen/style.css');

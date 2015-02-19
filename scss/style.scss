@@ -1,0 +1,544 @@
+// Bourbon Includes
+  @import 'bourbon/bourbon';
+  @import 'neat/neat';
+  @import 'base/base';
+  @import 'starterKit';
+
+
+// Custom Styles
+	// Container size
+		$max-width: 1700px;
+  	// Color
+	    $white: #ffffff;
+	    $offWhite: #fcfcfc;
+	    $black: #000000;
+	    $green: rgb(90,209,13);
+	    $blue:	rgb(23,182,231);
+	    $lightGrey: rgb(217,217,217);
+	    $darkGrey: rgb(25,26,28);
+	 
+	// Typography
+		$openSans: 'Open Sans', sans-serif;
+		h1,h2,h3,h4,h5,h6, p, a, button {
+			font-family: $openSans;
+			
+		}
+		h1,h2,h3,h4,h5,h6 {
+			font-weight: 100;
+		}
+		.title {
+			color: $blue;
+			padding: {
+				// top: $spacingMed;
+				bottom: $spacingSm;
+			}
+		}
+
+	// Buttons
+		button, input.button {
+			background: $blue;
+			font-variant: small-caps;
+			display: block;
+			&:hover {
+				background: darken($blue, 5%);
+			}
+		}
+	// Mixins
+		@mixin sidePadding {
+			padding: {
+				left: $spacingSm;
+				right: $spacingSm;
+			}
+		}
+	body {
+		background: $darkGrey;
+	}
+	// Default Settings
+			#mainContent {
+				@include outer-container;
+				background: $white;
+				//@include outer-container;
+				background: $white;
+				#hero {
+					$heroHeight: 40vh;
+					height: $heroHeight;
+					background-size: cover !important;
+				}	
+				
+				
+			}
+// Header
+	.mainNav {
+		@include outer-container;
+		// position: absolute;
+		// width: 100%;
+		background: $darkGrey;
+		nav {
+			@include span-columns(8);
+			@include shift(2);
+			text-align: center;
+			ul {
+				li {
+					display: inline;
+					padding-left:$spacingSm;
+					a {
+						color: $white;
+					}
+					&:first-child {
+						padding-left: 0px;
+					}
+				}
+			}
+		}
+	}
+// Page settings
+	.page {
+
+		// Homepage Settings
+			&.home {
+				#mainContent {
+					#hero {
+						.content {
+							@include outer-container;
+							@include vertical-align;
+							text-align: center;
+							background: none;
+							.callToAction {
+								margin-top: $spacingSm;
+								button {
+									width: 200px;
+									font-size: 1.1em;
+								}
+								.contactSales {
+									display: block;
+									margin-top: $spacingXsm;
+									color: $black;
+									font-size: .9em;
+									font-variant: small-caps;
+								}
+							}
+						}
+					}
+					
+					.entryOptions {
+						@include outer-container;
+						@include sidePadding;
+						header {
+							@include span-columns(6);
+							@include shift(3);
+							text-align: center;
+							margin-top: $spacingMed;
+							margin-bottom: $spacingMed;
+							.title {
+								padding-bottom: $spacingSm;
+							}
+						}
+						.item {
+							@include span-columns(6);
+							border: 1px solid $darkGrey;
+							padding: {
+								left: $spacingSm;
+								right: $spacingSm;
+								top: $spacingSm;
+							}
+							.intro {
+								@include span-columns(3 of 6);
+							}
+							img {
+								@include span-columns(3 of 6);
+							}
+							&.entryOne {
+								.intro {
+									.heading {
+										color: $blue;
+									}
+								}
+							}
+
+							&.entryTwo {
+								.intro {
+									.heading {
+										color: $green;
+									}
+								}
+							}
+						}
+					}
+
+					.partners {
+						@include outer-container;
+						@include sidePadding;
+						padding: {
+							top: $spacingLg;
+							bottom: $spacingLg;
+						}
+						header {
+							border-bottom: 1px solid $lightGrey;
+							padding-bottom: $spacingXsm;
+							margin-bottom: $spacingSm;
+
+						}
+						.item {
+							@include span-columns(3);
+						}
+					}
+
+					.businessType {
+						@include row;
+						@include sidePadding;
+						
+						border-top: 1px solid darken($offWhite, 15%);
+						border-bottom: 1px solid darken($offWhite, 15%);
+						background: $offWhite;
+						
+						
+						header {
+							@include span-columns(6);
+							@include shift(3);
+							text-align: center;
+							padding: {
+								top: $spacingMed;
+								bottom: $spacingMed;
+							}
+							.title {
+								padding-bottom: $spacingSm;
+							}
+						}
+						.typeList {
+							@include span-columns(8);
+							@include shift(2);
+							.item {
+								@include span-columns(4 of 8);
+								@include omega(2n);
+								height:200px;
+								margin-bottom: $spacingSm;
+								background-size: cover !important;
+								border-radius: 5px;
+								.content {
+									@include vertical-align;
+									background: none;
+									color: $white;
+									text-align: center;
+								}
+							}
+						}
+						
+					}
+
+					.benefits {
+						@include row;
+						padding: {
+							top: $spacingLg;
+							bottom: $spacingLg;
+						} 
+						.benefitsList {
+							@include row;
+							@include span-columns(8);
+							@include shift(2);
+							@include sidePadding;
+							.item {
+								@include span-columns(4 of 8);
+								@include omega(2n);
+								text-align: center;
+								margin-bottom: $spacingSm;
+							}
+						}
+						.callToAction {
+							@include span-columns(6);
+							@include shift(3);
+							@include sidePadding;
+							text-align: center;
+							border-top: 1px solid $lightGrey;
+							padding-top: $spacingMed;
+							button {
+								margin-top: $spacingSm;
+								width: 200px;
+							}
+						}
+					}
+					
+				}
+			}
+		// POS Bundles Page
+			&.page-template-page-bundles {
+				#hero {
+					.content {
+						@include vertical-align;
+						@include sidePadding;
+						@include outer-container;
+						background: none;
+						text-align: center;
+						// margin-bottom: $spacingMed;
+						.intro {
+							@include span-columns(6);
+							@include shift(3);
+						}
+					}	
+				}
+
+				.aboutBundles {
+					@include outer-container;
+					margin-bottom: $spacingLg;
+					.content {
+						@include sidePadding;
+						header {
+							@include span-columns(6);
+							@include shift(3);
+							text-align: center;
+							margin-bottom: $spacingMed;
+							margin-top: $spacingMed;
+						}
+						.bundleItems {
+							@include span-columns(8);
+							@include shift(2);
+							.item {
+								@include span-columns(3);
+							}
+						}
+
+					}
+				}
+
+				.features {
+					@include outer-container;
+					padding-bottom: $spacingLg;
+
+					.content {
+						@include span-columns(8);
+						@include shift(2);
+						border-top: 1px solid $lightGrey;
+						padding-top: $spacingLg;
+						.title {
+							text-align: center;
+							padding-bottom: $spacingMed;
+						}
+						.supportingImage {
+						@include span-columns(6);
+						}
+						.featuresList {
+							@include span-columns(6);
+						}
+					}
+					
+				}
+
+				.findBundle {
+					
+					background: $darkGrey;	
+					padding: {
+						top: $spacingMed;
+						bottom: $spacingMed;
+					}				
+					.content {
+						@include outer-container;
+
+						.formWrap {
+							@include span-columns(6);
+							@include shift(3);
+							text-align: center;
+							color: $white;
+							strong {
+								display: block;
+							}
+							.gform_wrapper {
+								ul, .gform_footer {
+									text-align: center;
+								}
+								label {
+									display: none;
+								}
+								select {
+									margin: 0 auto;
+								}
+							}
+
+						}
+
+					}
+				}
+
+				.funFacts {
+					@include row;
+					padding: {
+						top: $spacingMed;
+						bottom: $spacingMed;
+					}
+
+					.content {
+						@include outer-container;
+						text-align: center;
+						header {
+							@include span-columns(6);
+							@include shift(3);
+						}
+						.factsList {
+							@include span-columns(6);
+							@include shift(3);
+							li {
+								line-height: 2.3em;
+							}
+						}
+					}
+				}	
+			}
+		// Hardware Options
+			&.page-template-page-hardware {
+				#hero {
+					.content {
+						@include vertical-align;
+						@include sidePadding;
+						@include outer-container;
+						background: none;
+						text-align: center;
+						// margin-bottom: $spacingMed;
+						.intro {
+							@include span-columns(6);
+							@include shift(3);
+						}
+					}	
+					margin-bottom: $spacingLg;
+				}
+				.softwarePartners {
+					@include outer-container;
+					margin-bottom: $spacingLg;
+					.content {
+						@include sidePadding;
+						header {
+							@include span-columns(6);
+							@include shift(3);
+							text-align: center;
+							margin-bottom: $spacingMed;
+							margin-top: $spacingMed;
+						}
+						.partnersList {
+							@include span-columns(8);
+							@include shift(2);
+							.item {
+								@include span-columns(4);
+								@include omega(3n);
+								margin-bottom: $spacingXsm;
+							}
+						}
+
+					}
+				}
+			}
+		// Contact page
+			&.page-template-page-contact {
+				#contact {
+					margin-top: $spacingMed;
+					@include outer-container;
+					header, .formWrap {
+						@include span-columns(6);
+						@include shift(3);
+						text-align: center;
+					}
+					form {
+						.gform_body {
+							@include row;
+							.gfield {
+								clear: none;
+								@include span-columns(6);
+								@include omega(2n);
+							}
+
+							#field_2_7 {
+								@include span-columns(12);
+							}
+							select, input {
+								width: 97%;
+							}	
+						}
+						
+
+						.gform_footer {
+							border-top: 1px solid $lightGrey;
+							padding-top: $spacingMed;
+							margin-top: $spacingMed;
+							text-align: center;
+							.button {
+								width: 200px;
+								text-align: center;
+								margin: 0 auto;
+							}
+
+						}
+						
+						
+					}
+				}
+			}
+	}
+
+// Single Post Settings
+	// Bundle Pages
+		.single {
+			&.single-pos_bundle {
+				#hero {
+					@include outer-container;
+					padding: {
+						top: $spacingLg;
+						bottom: $spacingLg;
+					}
+					background: $blue;
+					.content {
+						@include span-columns(8);
+						@include shift(2);
+						color: $white;
+						.title {
+							color: $white;
+						}
+						.bundleInfo {
+							@include span-columns(4);
+						}
+						.bundleImage {
+							@include span-columns(8);
+							img {
+								float: right;
+							}
+						}
+						.purchase {
+							font-style: italic;
+							font-size:.9em;
+						}
+						button {
+							color: $blue !important;
+							background: $white !important;
+							margin-top: $spacingXsm;
+						}	
+					}					
+				}
+				.benefits {
+					@include row;
+					.content {
+						@include sidePadding;
+						@include span-columns(8);
+						@include shift(2);
+						padding: {
+							top: $spacingLg;
+							bottom: $spacingLg;
+						} 
+
+						.item {
+							@include span-columns(3);
+							text-align: center;
+						}
+					}
+				}
+
+				#features {
+					@include row;
+					.content {
+						@include sidePadding;
+						@include span-columns(8);
+						@include shift(2);
+						header {
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+
+	
+	    
